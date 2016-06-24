@@ -60,14 +60,16 @@ Simulated data (for one document) can be generated using
 
 function data = genSynData(n,alpha,b,cluster)
 
- Inputs:
+Inputs:  
       +  n       - number of data points (words, visual words) to be generated   
       +  alpha   - 1xk vector of dirichlet hypers  
       +  b       - scalar hyper for exponential distribution  
       +  cluster - cluster parameters  
       +  cluster{k}.mu - mean of the kth topic  
-      +  cluster{k}.cov - covariance matrix of the kth topic  
- Outputs:
+      +  cluster{k}.cov - covariance matrix of the kth topic    
+
+
+Outputs:  
       +  data    - a struct  
       +  data.X  - words, n-by-p matrix. p is the feature dimension  
       +  data.Z  - memberships, n-by-k matrix. k is the number of topics  
