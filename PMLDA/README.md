@@ -18,7 +18,8 @@ PRIOR TO RUNNING PMLDA:
 + After installing the libraries and toolboxes, the functions support/newProbability1.cpp and logmvnpdf1.cpp must be compiled with the following commands:
     * mex logmvnpdf1.cpp
     * mex newProbability1.cpp
-+ Add paths to lightspeed, Eigen, and support 
++ Add paths to lightspeed, Eigen, and support   
+
 ****************************************************************
 
 The command to run the PMLDA algorithm:   
@@ -36,49 +37,52 @@ pmlda_leastsquare conducts the inference stage and the cluster estimation stage 
 
 For the above two functions,
 
-Input: Data - 1*D cells. Each cell represents a document.
-       Data{i}.X  - saves the visual words for document i, which is a
+Input:  
++ Data - 1*D cells. Each cell represents a document.  
+      + Data{i}.X  - saves the visual words for document i, which is a
                     N-by-p matrix, N is the number of visual word in document i, and p
                     is the feature dimension.
                     Note that users can add additional fields to Data{i}. This function only uses
-                    Data{i}.X
-       para.topic - scalar, number of topics
-       para.alpha - 1-by-para.topic vector, parameter of Dirichlet distribution (prior of topic proportion)
-       para.exp   - scalar, parameter of exponential distribution (prior of scaling factor)
-       para.iter  - scalar, number of iterations for Gibbs sampling
-Output:
-      samples           - save the estimated memberships, topic proportion, scaling factor
-      samples(d).sStar  - estimated scaling factor for document d
-      samples(d).piStar - estimated topic proportion for document d
-      samples(d).zStar  - estimated membership for document d
-      cluster           - save the estimated clusters
-      cluster.mu{k}     - estimated mean for cluster k
-      cluster.cov{k}    - estimated covariance matrix for cluster k
+                    Data{i}.X  
++ para.topic - scalar, number of topics  
++ para.alpha - 1-by-para.topic vector, parameter of Dirichlet distribution (prior of topic proportion)  
++  para.exp   - scalar, parameter of exponential distribution (prior of scaling factor)  
++ para.iter  - scalar, number of iterations for Gibbs sampling  
+       
+Output:  
+      + samples           - save the estimated memberships, topic proportion, scaling factor  
+     +  samples(d).sStar  - estimated scaling factor for document d  
+      + samples(d).piStar - estimated topic proportion for document d  
+     +  samples(d).zStar  - estimated membership for document d  
+      + cluster           - save the estimated clusters  
+      + cluster.mu{k}     - estimated mean for cluster k  
+      + cluster.cov{k}    - estimated covariance matrix for cluster k  
 
-Simulated data (for one document) can be generated using 
+Simulated data (for one document) can be generated using   
 
 function data = genSynData(n,alpha,b,cluster)
 
- Inputs:
-        n       - number of data points (words, visual words) to be generated 
-        alpha   - 1xk vector of dirichlet hypers
-        b       - scalar hyper for exponential distribution
-        cluster - cluster parameters
-        cluster{k}.mu - mean of the kth topic
-        cluster{k}.cov - covariance matrix of the kth topic
- Outputs:
-        data    - a struct
-        data.X  - words, n-by-p matrix. p is the feature dimension
-        data.Z  - memberships, n-by-k matrix. k is the number of topics
-        data.Scale - scaling factor 
-        data.Pi - topic proportion
-        data.cluster - topics (clusters)
+Inputs:  
+      +  n       - number of data points (words, visual words) to be generated   
+      +  alpha   - 1xk vector of dirichlet hypers  
+      +  b       - scalar hyper for exponential distribution  
+      +  cluster - cluster parameters  
+      +  cluster{k}.mu - mean of the kth topic  
+      +  cluster{k}.cov - covariance matrix of the kth topic    
 
 
-Please run demo.m to see how to run PM-LDA and visualize the estimated result. If you have any questions, please contact:
+Outputs:  
+      +  data    - a struct  
+      +  data.X  - words, n-by-p matrix. p is the feature dimension  
+      +  data.Z  - memberships, n-by-k matrix. k is the number of topics  
+      +  data.Scale - scaling factor   
+      +  data.Pi - topic proportion  
+      +  data.cluster - topics (clusters)  
 
 
-****************************************************************
+Please run demo.m to see how to run PM-LDA and visualize the estimated result.  
+
+****************************************************************  
 
 Files explanation:  
 Latest Revision: June 2016
@@ -92,10 +96,10 @@ Latest Revision: June 2016
 + /support/dirichlet_sample.m - function to generate a sample from dirichlet distribution
 + /support/logmvnpdf1.cpp 
 + /support/newProbability1.cpp 
-+ /support/genSynData.m
++ /support/genSynData.m  
 
 
-****************************************************************
+****************************************************************  
 
 For any questions, please contact:
 
@@ -107,34 +111,34 @@ For any questions, please contact:
 
 ****************************************************************
 
-% This product is Copyright (c) 2016 C. Chen, A. Zare
-% All rights reserved.
-%
-% Redistribution and use in source and binary forms, with or without
-% modification, are permitted provided that the following conditions
-% are met:
-%
-%   1. Redistributions of source code must retain the above copyright
-%      notice, this list of conditions and the following disclaimer.
-%   2. Redistributions in binary form must reproduce the above copyright
-%      notice, this list of conditions and the following disclaimer in the
-%      documentation and/or other materials provided with the distribution.
-%   3. Neither the name of the University nor the names of its contributors
-%      may be used to endorse or promote products derived from this software
-%      without specific prior written permission.
-%
-% THIS SOFTWARE IS PROVIDED BY THE UNIVERSITY OF MISSOURI AND
-% CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
-% INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-% MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-% DISCLAIMED.  IN NO EVENT SHALL THE UNIVERSITY OR CONTRIBUTORS
-% BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-% EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-% LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES,
-% LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-% HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-% CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
-% OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-% SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
+This product is Copyright (c) 2016 C. Chen, A. Zare  
+ All rights reserved.  
+
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:  
+
+   1. Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.  
+   2. Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.  
+   3. Neither the name of the University nor the names of its contributors
+      may be used to endorse or promote products derived from this software
+      without specific prior written permission.  
+
+ THIS SOFTWARE IS PROVIDED BY THE UNIVERSITY OF MISSOURI AND
+ CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED.  IN NO EVENT SHALL THE UNIVERSITY OR CONTRIBUTORS
+ BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES,
+ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE  
 
 
