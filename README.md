@@ -37,7 +37,8 @@ pmlda_leastsquare conducts the inference stage and the cluster estimation stage 
 
 For the above two functions,
 
-Input: Data - 1*D cells. Each cell represents a document.  
+Input:  
++ Data - 1*D cells. Each cell represents a document.  
       + Data{i}.X  - saves the visual words for document i, which is a
                     N-by-p matrix, N is the number of visual word in document i, and p
                     is the feature dimension.
@@ -46,8 +47,9 @@ Input: Data - 1*D cells. Each cell represents a document.
        + para.topic - scalar, number of topics  
        + para.alpha - 1-by-para.topic vector, parameter of Dirichlet distribution (prior of topic proportion)  
        +  para.exp   - scalar, parameter of exponential distribution (prior of scaling factor)  
-       + para.iter  - scalar, number of iterations for Gibbs sampling
-Output:
+       + para.iter  - scalar, number of iterations for Gibbs sampling  
+       
+Output:  
       + samples           - save the estimated memberships, topic proportion, scaling factor  
      +  samples(d).sStar  - estimated scaling factor for document d  
       + samples(d).piStar - estimated topic proportion for document d  
