@@ -1,3 +1,10 @@
+Prerequisite:
+Function newProbability1 and logmvpdf1 are implemented in C++, which require installation of the Eigen (a matrix operation) libary and GSL (GNU Scientific Library). These two libaries can be found in the following links:
+http://eigen.tuxfamily.org/index.php?title=Main_Page
+https://www.gnu.org/software/gsl/
+
+
+
 The PM-LDA algorithm is realized in two ways.
 
 1. [samples,cluster]=pmlda_gibbs(Data,para)
