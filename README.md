@@ -19,6 +19,7 @@ PRIOR TO RUNNING PMLDA:
     * mex logmvnpdf1.cpp
     * mex newProbability1.cpp
 + Add paths to lightspeed, Eigen, and support   
+
 ****************************************************************
 
 The command to run the PMLDA algorithm:   
