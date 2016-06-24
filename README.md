@@ -44,10 +44,10 @@ Input:
                     is the feature dimension.
                     Note that users can add additional fields to Data{i}. This function only uses
                     Data{i}.X  
-       + para.topic - scalar, number of topics  
-       + para.alpha - 1-by-para.topic vector, parameter of Dirichlet distribution (prior of topic proportion)  
-       +  para.exp   - scalar, parameter of exponential distribution (prior of scaling factor)  
-       + para.iter  - scalar, number of iterations for Gibbs sampling  
++ para.topic - scalar, number of topics  
++ para.alpha - 1-by-para.topic vector, parameter of Dirichlet distribution (prior of topic proportion)  
++  para.exp   - scalar, parameter of exponential distribution (prior of scaling factor)  
++ para.iter  - scalar, number of iterations for Gibbs sampling  
        
 Output:  
       + samples           - save the estimated memberships, topic proportion, scaling factor  
