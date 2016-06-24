@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <iostream>
 #include "mex.h"
-#include <Eigen/Dense>
+#include "Eigen/Dense"
 # define M_PIL       3.141592653589793238462643383279502884L /* pi */
 using namespace Eigen;  
 using namespace Eigen::internal;  

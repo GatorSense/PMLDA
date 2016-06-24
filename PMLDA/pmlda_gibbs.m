@@ -87,7 +87,7 @@ for d=1:D
         end
         covr=inv(Nat1);
         mu=covr*Nat2;
-        eZ=logmvnpdf(XX(offset+n,:),mu',covr);  
+        eZ=logmvnpdf1(XX(offset+n,:),mu',covr);  
         eZ=sum(eZ(:));
         eZ=eZ+log(z0(n,:))*(s0*pi0'-1);
         energyZ(n,1)=eZ;
