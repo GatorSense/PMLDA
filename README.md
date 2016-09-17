@@ -4,7 +4,7 @@ Partial Membership Latent Dirichlet Allocation
 ****************************************************************
 
 NOTE: If PMLDA used in any publication or presentation, the following reference must be cited:  
-C. Chen, A. Zare, and J. T. Cobb, "Partial Membership Latent Dirichlet Allocation for Image Segmentation," Under Review. 
+C. Chen, A. Zare, and J. T. Cobb, "Partial Membership Latent Dirichlet Allocation for Image Segmentation," IEEE International Conference on Pattern Recognition, Cancun, Mexico, 2016.  
 available: http://arxiv.org/abs/1511.02821
 
 ****************************************************************
@@ -105,9 +105,10 @@ For any questions, please contact:
 
  Chao Chen  
  Email Address:ccwwf@mail.missouri.edu  
+ 
  Alina Zare  
- Email Address:zarea@missouri.edu   
- University of Missouri, Department of Electrical and Computer Engineering  
+ Email Address:azare@ece.ufl.edu   
+ University of Florida, Department of Electrical and Computer Engineering  
 
 ****************************************************************
 
